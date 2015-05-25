@@ -28,6 +28,9 @@ pt-BR:
       failure: "Não pudemos autenticá-lo em %{kind} por causa de \"%{reason}\"."
       success: "Autenticado com sucesso na conta %{kind}."
     passwords:
+      forget: Perdeu sua senha?
+      change_it: Troque a sua senha!
+      submit: Trocar de senha!
       no_token: "Você não pode acessar essa página vindo do email para reiniciar sua senha. Se você está vindo do email para reiniciar sua senha, por favor, certifique-se de estar usando a URL correta."
       send_instructions: "Você receberá um email com instruções de como reiniciar sua senha em alguns minutos."
       send_paranoid_instructions: "Se o seu endereço de email estiver em nossa base de dados, em alguns minutos você receberá um link para recuperar sua senha em seu email."

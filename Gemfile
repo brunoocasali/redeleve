@@ -11,8 +11,8 @@ source 'https://rubygems.org' do
   gem 'simple_form', '~> 3.1.0'
   gem 'responders', '~> 2.0.2'
   gem 'turbolinks'
-  gem 'jbuilder', '~> 2.0'
-  # gem 'sass'
+  # gem 'jbuilder', '~> 2.0'
+  gem 'sass'
   # gem 'cancancan', '~> 1.10'
   gem 'passenger'
 
