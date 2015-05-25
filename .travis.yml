@@ -1,32 +1,23 @@
 language: ruby
 rvm:
-  - 2.2.1
-
+- 2.2.1
 addons:
   code_climate:
     repo_token: YOUR_CODE_CLIMATE_KEY
   postgresql: 9.3
-
 env:
-  - DB=postgres
-
+- DB=postgres
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
-
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec spec/
 before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
 deploy:
   provider: heroku
   api_key:
-    secure: YOUR_HEROKU_KEY
-  app: YOUR_HEROKU_APP_NAME
+    secure: LnNwBWQc9ZsCxsV8ij/xFpfsQx7tx53P3PGS/ZpMQGo+ZYRxeSqNIZvvS30xTO0SKXznN7AI9YgRGRZSjnffthER4WMJbRF2Vu1JL9HXwx0h8ct9BfDQbKCwRyHaXfVt7KmRk4mXt9wudP0VuvAZqvBiwUcsRm37n4iQ6M0/lgMWy6h88ap2BIyYqTgmJdqsvUKSAYXFgEH7azSdH82Zti+jrKJIHBPNUVt/aR3Ksdda3q2ctJQZWdePlRqZ8t+8zs6RK44bCY9brUgvPSzA/quaxNoNeB8DLt2GBbCTBX5pJFf61+JZLIqvVV4IJPRcWCOog87EN4R/RHMcrtHvFMG1WiZ3Mpwh5Vw3m1hxIGkLBVN8NtlF36XW/Gy6ZkvRVH6QsD0j1cXs+tmsZYOBOu22PGNRfqEwjHAE/YsBvy/Od45AdthUy8UuMuQdi/fDYFd7JfyMztzuYXoBUjfQAopRwUjkR5XYzqKTPXm6wB8GtuDNottRXsU1sp3wJ5kwnEyxZfs+D8QP7w01sE/VgsCQNfvhoJUd7A4PbmgkWV00Q7kd7JFkwmBbDa/7ZjRFwZHql6jeDdGBAVlxrJZJN6jKqHHEhZ9GLGTcAt2H1boU+GC8hgIjinr7grCIGfMb8CB8ojY8VacwUt58uc4YdH1wSs/N66Slp9I5U1K+U2I=
+  app: redeleve
   on:
-    repo: YOUR_USER/YOUR_REPO
-  run:
-      - "rake db:create"
-      - "rake db:migrate"
-      - restart
+    repo: brunoocasali/redeleve
