@@ -21,3 +21,7 @@ deploy:
   app: redeleve
   on:
     repo: brunoocasali/redeleve
+   run:
+      - "rake db:create"
+      - "rake db:migrate"
+      - restart
